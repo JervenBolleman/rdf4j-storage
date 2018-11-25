@@ -185,7 +185,7 @@ public class ShaclSailConnection extends NotifyingSailConnectionWrapper {
 
 					boolean valid = collect.size() == 0;
 					if (!valid) {
-						logger.warn("SHACL not valid. The following experimental debug results were produced: \n\tNodeShape: {} \n\t\t{}", nodeShape.toString(), String.join("\n\t\t", collect.stream().map(a -> a.toString()+" -cause-> "+a.getCause()).collect(Collectors.toList())));
+						logger.info("SHACL not valid. The following experimental debug results were produced: \n\tNodeShape: {} \n\t\t{}", nodeShape.toString(), String.join("\n\t\t", collect.stream().map(a -> a.toString()+" -cause-> "+a.getCause()).collect(Collectors.toList())));
 					}
 					allValid = allValid && valid;
 				}

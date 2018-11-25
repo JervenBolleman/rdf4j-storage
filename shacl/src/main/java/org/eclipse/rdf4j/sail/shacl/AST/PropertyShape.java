@@ -119,6 +119,10 @@ public class PropertyShape implements PlanGenerator, RequiresEvalutation {
 			if (hasOr(propertyShapeId, connection)) {
 				propertyShapes.add(new OrPropertyShape(propertyShapeId, connection, nodeShape));
 			}
+
+			if (hasClass(propertyShapeId, connection)) {
+				propertyShapes.add(new ClassPropertyShape(propertyShapeId, connection, nodeShape));
+			}
 			return propertyShapes;
 		}
 
@@ -137,6 +141,10 @@ public class PropertyShape implements PlanGenerator, RequiresEvalutation {
 
 		private static boolean hasDatatype(Resource id, SailRepositoryConnection connection) {
 			return connection.hasStatement(id, SHACL.DATATYPE, null, true);
+		}
+
+		private static boolean hasClass(Resource id, SailRepositoryConnection connection) {
+			return connection.hasStatement(id, SHACL.CLASS, null, true);
 		}
 
 

@@ -46,7 +46,8 @@ public class ShaclTest {
 		"test-cases/or/datatype",
 		"test-cases/or/minCountMaxCount",
 		"test-cases/or/maxCount",
-		"test-cases/or/minCount"
+		"test-cases/or/minCount",
+		"test-cases/class/simple"
 
 	);
 
